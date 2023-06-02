@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function validateEdges() {
+            var edge1 = parseFloat(document.getElementById('edge1').value);
+            var edge2 = parseFloat(document.getElementById('edge2').value);
+            var edge3 = parseFloat(document.getElementById('edge3').value);
+
+            if (isNaN(edge1) || isNaN(edge2) || isNaN(edge3)) {
+                alert("Enter valid numeric values for all three edges.");
+                return;
+            }
+
+            if (edge1 + edge2 > edge3 && edge2 + edge3 > edge1 && edge3 + edge1 > edge2) {
+                alert("Edges are Valid!");
+            } else {
+                alert("Edges are Invalid!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <label for="edge1">Enter edge 1:</label>
+        <input type="text" id="edge1"><br><br>
+    <label for="edge2">Enter edge 2:</label>
+        <input type="text" id="edge2"><br><br>
+    <label for="edge3">Enter edge 3:</label>
+        <input type="text" id="edge3"><br><br>
+
+    <button onclick="validateEdges()">Validate</button>
+
+</body>
+</html>
